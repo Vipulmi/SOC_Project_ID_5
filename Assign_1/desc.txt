@@ -1,0 +1,21 @@
+Assignment 1
+(Epsilon greedy algorithm implemetation)
+
+Approach:
+
+First task was to simulate the multiple armed bandit with 5 arms for which I developed a class “MultiArmedBandit” with the desired distributions for each of the arms
+
+Then, for the epsilon greedy algorithm, to handle the trade-off between exploration and exploitation, np.random.rand() was used. If the generated random number was less than the epsilon value, the algorithm explored by selecting a random arm. Otherwise, it exploited by selecting the arm with the highest estimated average reward.
+
+run_episode():
+Simulates an episode of a given number of steps. It decides between exploration (random arm) and exploitation (best estimated arm) based on the epsilon value. It updates the counts and rewards for each arm accordingly and returns the total reward of the episode.
+
+Implemented nested loops to simulate multiple episodes. The average reward after each episode was stored in a list for each epsilon value.
+
+Result: 
+
+Epsilon = 0.1 proved to be more effective in finding the optimal action due to a balanced approach between exploration and exploitation.
+Epsilon = 0.01 and 0.001 led to early convergence(short learning phase) due to insufficient exploration. This resulted in these values not being as effective in identifying the optimal action compared to epsilon = 0.1.
+
+Resources: 
+GPT: For structuring the epsilon-greedy algorithm and multi-armed bandit class effectively.
